@@ -10,7 +10,7 @@
 #define LAYER_NMPAD 3
 
 &mt {
-    require-prior-idle-ms = <125>;
+    require-prior-idle-ms = <65>;
 };
 
 / {

@@ -16,18 +16,20 @@
 
 / {
 	behaviors {
-	bhm: balanced_homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
+		bhm: balanced_homerow_mods {
+			compatible = "zmk,behavior-hold-tap";
+			label = "HOMEROW_MODS";
+			#binding-cells = <2>;
+			tapping-term-ms = <200>;    // <---[[moderate duration]]
+			quick-tap-ms = <0>;
+			flavor = "balanced";
+			bindings = <&kp>, <&kp>;
         };
 	};
+
 	keymap {
 		compatible = "zmk,keymap";
+
 		layer_0 {
 			bindings = <
 				&bootloader
@@ -41,6 +43,7 @@
 				                                                                                &kp RET    &kp PGDN
 			>;
 		};
+
 		layer_1 {
 			bindings = <
 				&bootloader
@@ -54,6 +57,7 @@
 				                                                                       &none &none
 			>;
 		};
+
 		layer_2 {
 			bindings = <
 				&bootloader
@@ -67,6 +71,7 @@
 				                                                           &none          &none
 			>;
 		};
+
 		layer_3 {
 			bindings = <
 				&bootloader
@@ -80,6 +85,6 @@
 				                                                        &kp RET              &none
 			>;
 		};
-	};
 
+	};
 };

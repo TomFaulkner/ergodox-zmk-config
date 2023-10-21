@@ -15,6 +15,17 @@
 };
 
 / {
+	behaviors {
+	bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+	};
 	keymap {
 		compatible = "zmk,keymap";
 		layer_0 {
@@ -22,7 +33,7 @@
 				&bootloader
 				&sl LAYER_FN &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5   &kp PRSC   &none      &kp NUMBER_6 &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0  &kp C_PLAY_PAUSE
 				&kp ESC      &kp Q        &kp W        &kp F        &kp P        &kp G          &kp CLCK   &caps_word &kp J        &kp L        &kp U        &kp Y        &kp SEMICOLON &kp BSLH
-				&kp BKSP     &mt LCTRL A  &mt LALT R   &mt LGUI S   &mt LSHFT T  &kp D                                &kp H        &mt RSHFT N  &mt RGUI E   &mt RALT I   &mt RCTRL O   &kp SQT
+				&kp BKSP     &bhm LCTRL A  &bhm LALT R   &bhm LGUI S   &bhm LSHFT T  &kp D                                &kp H        &bhm RSHFT N  &bhm RGUI E   &bhm RALT I   &bhm RCTRL O   &kp SQT
 				&none        &kp Z        &kp X        &kp C        &kp V        &kp B          &kp M_VOLD &kp M_VOLU &kp K        &kp M        &kp CMMA     &kp DOT      &kp FSLH      &kp GRAV
 				&none        &none        &none        &kp LARW     &kp RARW                                                       &kp UARW     &kp DARW     &none        &none         &to LAYER_NMPAD
 				                                                                 &kp K_APP      &kp HOME   &kp DEL    &kp INS

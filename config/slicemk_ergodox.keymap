@@ -9,38 +9,33 @@
 #define LAYER_SYMB 2
 #define LAYER_NMPAD 3
 
+&mt {
+    require-prior-idle-ms = <250>;
+	tapping-term-ms = <250>;
+};
+
 / {
-    behaviors {
-		lh_pht: left_hand_positional_hold_tap {
+	behaviors {
+		bhm: balanced_homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
-			label = "LEFT_POSITIONAL_HOLD_TAP";
+			label = "HOMEROW_MODS";
 			#binding-cells = <2>;
-			flavor = "tap-unless-interrupted";
-			tapping-term-ms = <500>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-			quick-tap-ms = <200>;
+			tapping-term-ms = <200>;    // <---[[moderate duration]]
+			quick-tap-ms = <0>;
+			flavor = "balanced";
 			bindings = <&kp>, <&kp>;
-			hold-trigger-key-positions = <6 7 8 9 10>;    // <---[[right-hand keys]]
-		};
-		rh_pht: right_hand_positional_hold_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "RIGHT_POSITIONAL_HOLD_TAP";
-			#binding-cells = <2>;
-			flavor = "tap-unless-interrupted";
-			tapping-term-ms = <500>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-			quick-tap-ms = <200>;
-			bindings = <&kp>, <&kp>;
-			hold-trigger-key-positions = <1 2 3 4 5>;    // <---[[left-hand keys]]
-		};
+        };
 	};
 
 	keymap {
 		compatible = "zmk,keymap";
+
 		layer_0 {
 			bindings = <
 				&bootloader
 				&sl LAYER_FN &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5   &kp PRSC   &none      &kp NUMBER_6 &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0  &kp C_PLAY_PAUSE
 				&kp ESC      &kp Q        &kp W        &kp F        &kp P        &kp G          &kp CLCK   &caps_word &kp J        &kp L        &kp U        &kp Y        &kp SEMICOLON &kp BSLH
-				&kp BKSP     &lh_pht LCTRL A  &lh_pht LALT R   &lh_pht LGUI S   &lh_pht LSHFT T  &kp D                                &kp H        &rh_pht RSHFT N  &rh_pht RGUI E   &rh_pht RALT I   &rh_pht RCTRL O   &kp SQT
+				&kp BKSP     &bhm LCTRL A  &bhm LALT R   &bhm LGUI S   &bhm LSHFT T  &kp D                                &kp H        &bhm RSHFT N  &bhm RGUI E   &bhm RALT I   &bhm RCTRL O   &kp SQT
 				&none        &kp Z        &kp X        &kp C        &kp V        &kp B          &kp M_VOLD &kp M_VOLU &kp K        &kp M        &kp CMMA     &kp DOT      &kp FSLH      &kp GRAV
 				&none        &none        &none        &kp LARW     &kp RARW                                                       &kp UARW     &kp DARW     &none        &none         &to LAYER_NMPAD
 				                                                                 &kp K_APP      &kp HOME   &kp DEL    &kp INS
@@ -48,6 +43,7 @@
 				                                                                                &kp RET    &kp PGDN
 			>;
 		};
+
 		layer_1 {
 			bindings = <
 				&bootloader
@@ -61,6 +57,7 @@
 				                                                                       &none &none
 			>;
 		};
+
 		layer_2 {
 			bindings = <
 				&bootloader
@@ -74,6 +71,7 @@
 				                                                           &none          &none
 			>;
 		};
+
 		layer_3 {
 			bindings = <
 				&bootloader
@@ -87,6 +85,6 @@
 				                                                        &kp RET              &none
 			>;
 		};
-	};
 
+	};
 };

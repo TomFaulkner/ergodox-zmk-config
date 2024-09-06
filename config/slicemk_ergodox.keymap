@@ -93,7 +93,7 @@
 				&bootloader
 				&to 0          &kp NUMBER_1    &kp NUMBER_2 &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5     &kp PRINTSCREEN           &none           &kp NUMBER_6 &kp NUMBER_7   &kp NUMBER_8    &kp NUMBER_9  &kp NUMBER_0    &none
 				&kp ESC        &kp Q           &kp W        &kp E          &kp R          &kp T            &kp CAPSLOCK              &kp C_MUTE      &kp Y        &kp U          &kp I           &kp O         &kp P           &kp BACKSLASH
-				&kp BKS  P     &kp A           &kp S        &kp D          &kp F          &kp G                                                      &kp H        &kp J          &kp K           &kp L         &kp SEMICOLON   &kp BACKSPACE
+				&kp BKSP       &kp A           &kp S        &kp D          &kp F          &kp G                                                      &kp H        &kp J          &kp K           &kp L         &kp SEMICOLON   &kp BACKSPACE
 				&kp LSHIFT     &kp Z           &kp X        &kp C          &kp V          &kp B            &kp C_VOLUME_DOWN         &kp C_VOLUME_UP &kp N        &kp M          &kp COMMA       &kp PERIOD    &kp SLASH       &mo LAYER_SYMB
 				&kp LCTRL      &none	       &none        &kp LARW       &kp RARW                                                  &kp UP_ARROW    &kp DARW     &kp RARW       &kp RIGHT_ALT   &none         &none
 
